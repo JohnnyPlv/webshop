@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="layout :: layout(~{::title}, ~{::section}) " xmlns:th="http://www.thymeleaf.org">
+<title>WebShop :: More filters</title>
+<section>
+    <div class="tableHolder">
+        <div  class="filterNav">
+            <form action="/filter-by-type/processor"
+                  method="get">
+                <button href="/filter-by-type/processor"  >Processors</button>
+            </form>
+            <form action="/filter-by-type/graphics"
+                  method="get">
+                <button >Graphics cards</button>
+            </form>
+            <form action="/filter-by-type/ram"
+                  method="get">
+                <button >RAM</button>
+            </form>
+            <form action="#"
+                  th:action="@{/price-in-eur}"
+                  method="get">
+                <button >EURO</button>
+            </form>
+            <form action="#"
+                  th:action="@{/price-in-original}"
+                  method="get">
+                <button >Original currency</button>
+            </form>
+            <form class="search" action="#"
+                  th:action="@{/search}"
+                  method="post">
+                <label for="searchField">Search:</label>
+                <input type="text"
+                       name="keyword"
+                       id="searchField"
+                       required/>
+                <!--        TODO    label for and input id se musi propojit a name v inputu je keyword -> parametr v Metode v controlleru-->
+            </form>
+        </div>
+        <table>
+
+            <tr class="text-center">
+                <th scope="col">Product</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Type</th>
+            </tr>
+            <tr th:each="item : ${items}" >
+                <td th:text="${item.getName()}"></td>
+                <td th:text="${item.getDescription()}"></td>
+                <td th:text="${ makeEuro ? item.getPrice()/25 + ' €' : item.getPrice() + ' Czk'}"></td>
+                <td th:text="${item.getStock()}"></td>
+                <td th:text="${item.getType()}"></td>
+            </tr>
+        </table>
+    </div>
+
+</section>
+</html>

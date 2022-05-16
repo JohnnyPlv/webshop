@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="layout :: layout(~{::title}, ~{::section}) " xmlns:th="http://www.thymeleaf.org">
+    <title>WebShop :: Home</title>
+<section>
+    <div class="tableHolder">
+        <table >
+            <tr class="text-center">
+                <th scope="col">Product</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Type</th>
+            </tr>
+            <tr th:each="item : ${items}" >
+                <td th:text="${item.getName()}"></td>
+                <td th:text="${item.getDescription()}"></td>
+                <td th:text="${item.getPrice() + ' Czk'}"></td>
+                <td th:text="${item.getStock()}"></td>
+                <td th:text="${item.getType()}"></td>
+            </tr>
+        </table>
+    </div>
+
+</section>
+</html>

@@ -1,0 +1,96 @@
+.headerHolder {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*.search {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*}*/
+/*label {*/
+/*    display: inline-block;*/
+/*}*/
+
+
+button {
+    position: relative;
+    display: block;
+    width: 200px;
+    background-color: grey; /* Green */
+    margin-top: 10px;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.name {
+}
+
+.more {
+    position: center;
+}
+
+.filterNav {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.tableHolder {
+    position: relative;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1500px;
+    heigh: auto;
+    align-items: center;
+}
+
+
+form {
+    display: inline-block;
+    font-size: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 1400px;
+    height: 500px;
+    border-radius: 0.3em;
+    overflow: hidden;
+}
+
+
+td {
+    border: black solid 1px;
+    width: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: wheat;
+    font-size: 20px;
+}
+
+th {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-color: #211c1c;
+    border-bottom: 2px;
+    text-align: left;
+    font-size: 25px;
+}
+
+tr:nth-child(2n) {
+    background-color: #365d5d;
+}
+
+tr:nth-child(2n+1){
+    background-color: grey;
+}

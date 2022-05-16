@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="container-fluid"  lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, content)">
+<head>
+    <meta charset="UTF-8">
+    <title th:replace="${title}">WebShop</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+    <div class="headerHolder">
+        <h1 class="name" ><a th:href="'/webshop'">Honza Webshop</a></h1>
+        <h1 class="more"><a th:href="'/more-filters'">More ->></a></h1>
+    </div>
+<!--    <button type = button action="#" th:action="@{/only-available}" >Only available</button>-->
+    <div class="navbar navbar-light" style="background-color: white;"  >
+        <form action="#"
+              th:action="@{/only-available}"
+              method="get">
+            <button  >Available</button>
+        </form>
+        <form action="#"
+              th:action="@{/cheapest-first}"
+              method="get">
+            <button >Cheapest first</button>
+        </form>
+        <form action="#"
+              th:action="@{/contains-pc}"
+              method="get">
+            <button >Contains Intel</button>
+        </form>
+        <form action="#"
+              th:action="@{/average-stock}"
+              method="get">
+            <button >Average stock</button>
+        </form>
+        <form action="#"
+              th:action="@{/most-expensive}"
+              method="get">
+            <button >Most expensive</button>
+        </form>
+        <form class="search" action="#"
+              th:action="@{/search}"
+              method="get">
+            <label for="searchField">Search:</label>
+            <input type="text"
+                   name="keyword"
+                   id="searchField"
+                   required/>
+<!--        TODO    label for and input id se musi propojit a name v inputu je keyword -> parametr v Metode v controlleru-->
+        </form>
+    </div>
+</header>
+
+<main th:replace="${content}">
+
+</main>
+
+</body>
+</html>
